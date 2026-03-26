@@ -1,6 +1,5 @@
-package com.zhengqin.shortlink.project.dto.resp;
+package com.zhengqin.shortlink.admin.remote.dto.resp;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.zhengqin.shortlink.project.dto.req;
+package com.zhengqin.shortlink.admin.remote.dto.req;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zhengqin.shortlink.project.dao.entity.ShortLinkDO;
+import com.zhengqin.shortlink.admin.dao.entity.ShortLinkDO;
 import lombok.Data;
 
 /**

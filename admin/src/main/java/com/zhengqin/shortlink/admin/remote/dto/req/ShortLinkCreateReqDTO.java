@@ -1,6 +1,5 @@
-package com.zhengqin.shortlink.project.dto.req;
+package com.zhengqin.shortlink.admin.remote.dto.req;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.util.Date;
