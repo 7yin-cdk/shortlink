@@ -1,4 +1,4 @@
-package com.zhengqin.shortlink.project.dto.resp;
+package com.zhengqin.shortlink.project.dto.req;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -7,30 +7,14 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * 短链接分页返回参数
+ * 短链接创建请求对象
  */
 @Data
-public class ShortLinkPageRespDTO {
-
-    /**
-     * ID
-     */
-    private Long id;
-
+public class ShortLinkCreateReqDTO {
     /**
      * 域名
      */
     private String domain;
-
-    /**
-     * 短链接
-     */
-    private String shortUri;
-
-    /**
-     * 完整短链接
-     */
-    private String fullShortUrl;
 
     /**
      * 原始链接
@@ -43,9 +27,9 @@ public class ShortLinkPageRespDTO {
     private String gid;
 
     /**
-     * 网站图标
+     * 创建类型 0：控制台 1：接口
      */
-    private String favicon;
+    private Integer createdType;
 
     /**
      * 有效期类型 0：永久有效 1：用户自定义
@@ -57,12 +41,6 @@ public class ShortLinkPageRespDTO {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date validDate;
-
-    /**
-     * 创建时间
-     */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-    private Date createTime;
 
     /**
      * 描述

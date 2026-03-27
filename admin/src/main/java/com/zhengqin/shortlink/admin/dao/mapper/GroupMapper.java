@@ -1,4 +1,10 @@
 package com.zhengqin.shortlink.admin.dao.mapper;
 
-public interface GroupMapper {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zhengqin.shortlink.admin.dao.entity.GroupDO;
+
+/**
+ * 短链接分组持久层
+ */
+public interface GroupMapper extends BaseMapper<GroupDO> {
 }

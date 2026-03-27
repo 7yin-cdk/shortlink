@@ -1,4 +1,4 @@
-package com.zhengqin.shortlink.project.config;
+package com.zhengqin.shortlink.admin.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;

@@ -1,7 +1,7 @@
-package com.zhengqin.shortlink.project.dao.entity;
+package com.zhengqin.shortlink.admin.dao.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.zhengqin.shortlink.project.common.database.BaseDO;
+import com.zhengqin.shortlink.admin.common.database.BaseDO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
