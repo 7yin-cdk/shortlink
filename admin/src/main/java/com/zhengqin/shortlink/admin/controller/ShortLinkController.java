@@ -5,6 +5,7 @@ import com.zhengqin.shortlink.admin.common.convention.result.Result;
 import com.zhengqin.shortlink.admin.remote.ShortLinkRemoteService;
 import com.zhengqin.shortlink.admin.remote.dto.req.ShortLinkCreateReqDTO;
 import com.zhengqin.shortlink.admin.remote.dto.req.ShortLinkPageReqDTO;
+import com.zhengqin.shortlink.admin.remote.dto.req.ShortLinkUpdateReqDTO;
 import com.zhengqin.shortlink.admin.remote.dto.resp.ShortLinkCreateRespDTO;
 import com.zhengqin.shortlink.admin.remote.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.zhengqin.shortlink.admin.remote.dto.resp.ShortLinkPageRespDTO;
@@ -27,6 +28,14 @@ public class ShortLinkController {
     @PostMapping("/api/short-link/admin/v1/create")
     public Result<ShortLinkCreateRespDTO> createShortLink(@RequestBody ShortLinkCreateReqDTO requestParam) {
         return shortLinkRemoteService.createShortLink(requestParam);
+    }
+
+    /**
+     * 修改短链接
+     */
+    @PostMapping("/api/short-link/admin/v1/update")
+    public Result<Void> updateShortLink(@RequestBody ShortLinkUpdateReqDTO requestParam) {
+        return shortLinkRemoteService.updateShortLink(requestParam);
     }
 
     /**

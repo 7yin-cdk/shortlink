@@ -1,4 +1,4 @@
-package com.zhengqin.shortlink.project.dto.req;
+package com.zhengqin.shortlink.admin.remote.dto.req;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
