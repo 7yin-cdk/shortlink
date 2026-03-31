@@ -1,12 +1,12 @@
-package com.zhengqin.shortlink.admin.remote.dto.req;
+package com.zhengqin.shortlink.project.dto.req;
 
 import lombok.Data;
 
 /**
- * 回收站恢复
+ * 回收站移除短链接
  */
 @Data
-public class RecycleBinRecoverReqDTO {
+public class RecycleBinRemoveReqDTO {
 
     /**
      * 分组标识

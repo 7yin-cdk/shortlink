@@ -1,4 +1,4 @@
-package com.zhengqin.shortlink.project.dto.req;
+package com.zhengqin.shortlink.admin.remote.dto.req;
 
 import lombok.Data;
 

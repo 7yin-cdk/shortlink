@@ -3,10 +3,10 @@ package com.zhengqin.shortlink.project.dto.req;
 import lombok.Data;
 
 /**
- * 回收站保存
+ * 回收站恢复
  */
 @Data
-public class RecycleBinSaveReqDTO {
+public class RecycleBinRecoverReqDTO {
 
     /**
      * 分组标识
