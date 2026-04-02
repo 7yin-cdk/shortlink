@@ -1,9 +1,16 @@
 # 数据源集合
 dataSources:
-  ds_0:
+  user_ds_0:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://127.0.0.1:3306/link?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    jdbcUrl: jdbc:mysql://127.0.0.1:3306/user_0?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: zq2892294059
+
+  user_ds_1:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://127.0.0.1:3306/user_1?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: zq2892294059
 
@@ -12,7 +19,15 @@ rules:
     tables:
       t_user:
         # 真实数据节点，比如数据库源以及数据库在数据库中真实存在的
-        actualDataNodes: ds_0.t_user_${0..15}
+        actualDataNodes: user_ds_${0..1}.t_user_${0..15}
+        #定义分库规则，即数据应该路由到哪个数据库
+        databaseStrategy:
+          #单分片键分库
+          standard:
+            #指定分库依据的字段名
+            shardingColumn: username
+            #指定分库算法
+            shardingAlgorithmName: user_database_hash_mod
         # 分表策略
         tableStrategy:
           # 用于单分片键的标准分片场景
@@ -23,7 +38,15 @@ rules:
             shardingAlgorithmName: user_table_hash_mod
       t_group:
         # 真实数据节点，比如数据库源以及数据库在数据库中真实存在的
-        actualDataNodes: ds_0.t_group_${0..15}
+        actualDataNodes: user_ds_${0..1}.t_group_${0..15}
+        #定义分库规则，即数据应该路由到哪个数据库
+        databaseStrategy:
+          #单分片键分库
+          standard:
+            #指定分库依据的字段名
+            shardingColumn: username
+            #指定分库算法
+            shardingAlgorithmName: user_database_hash_mod
         # 分表策略
         tableStrategy:
           # 用于单分片键的标准分片场景
@@ -34,6 +57,13 @@ rules:
             shardingAlgorithmName: group_table_hash_mod
     # 分片算法
     shardingAlgorithms:
+      # 数据库分片算法
+      user_database_hash_mod:
+        # 根据分片键 Hash 分片
+        type: HASH_MOD
+        # 分片数量
+        props:
+          sharding-count: 2
       # 数据表分片算法
       user_table_hash_mod:
         # 根据分片键 Hash 分片
